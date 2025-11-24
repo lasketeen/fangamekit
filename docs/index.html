@@ -13,16 +13,31 @@
         /* Topbar styling */
         .topbar {
             display: flex;
-            justify-content: flex-end; /* align items to the right */
-            align-items: center;       /* vertical centering */
-            height: 50px;              /* short Y-axis */
+            justify-content: space-between; /* space between center text and buttons */
+            align-items: center;
+            height: 50px;
             background-color: #333;
             padding: 0 20px;
+            position: relative;
         }
 
-        /* Button styling */
+        /* Center text */
+        .topbar .title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Buttons styling */
+        .topbar .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
         .topbar button {
-            margin-left: 10px;
             padding: 8px 16px;
             background-color: #555;
             border: none;
@@ -39,9 +54,12 @@
 <body>
 
     <div class="topbar">
-        <button>Button 1</button>
-        <button>Button 2</button>
-        <button>Button 3</button>
+        <div class="title">Lask's Fangame Multikit</div>
+        <div class="buttons">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+        </div>
     </div>
 
 </body>
