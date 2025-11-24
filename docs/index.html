@@ -29,9 +29,11 @@
             align-items: center;
             justify-content: space-between;
             height: 50px;
-            background-color: #2f4f3c;
+            background-color: rgba(47, 79, 60, 0.9); /* semi-transparent to let body pattern show slightly */
             padding: 0 20px;
             position: relative;
+            backdrop-filter: blur(2px); /* optional, smooths background behind topbar */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle separation line */
         }
 
         /* Center title */
