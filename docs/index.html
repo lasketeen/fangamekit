@@ -18,25 +18,33 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background: url('icons/checker.png') repeat;
             background-size: 100px 100px;
-            opacity: 0.15; /* was 0.05, now more visible */
-            pointer-events: none;
-            z-index: -1;
+            opacity: 0.05; /* adjust for subtlety */
+            pointer-events: none; /* so clicks pass through */
+            z-index: -1; /* behind everything */
         }
 
-        .topbar::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: url('icons/checker.png') repeat;
-            background-size: 50px 50px; /* smaller squares → more pronounced */
-            opacity: 0.1; /* slightly more visible */
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .topbar > * {
+        /* Topbar styling */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            background-color: rgba(47, 79, 60, 0.722); /* semi-transparent to let body pattern show slightly */
+            padding: 0 20px;
             position: relative;
-            z-index: 1;
+            backdrop-filter: blur(2px); /* optional, smooths background behind topbar */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* subtle separation line */
+        }
+
+        /* Center title */
+        .topbar .title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            white-space: nowrap;
         }
 
         /* Buttons container */
