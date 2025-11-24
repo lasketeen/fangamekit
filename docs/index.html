@@ -14,7 +14,7 @@
         .topbar {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* title left + buttons right */
+            justify-content: space-between;
             height: 50px;
             background-color: #333;
             padding: 0 20px;
@@ -29,15 +29,13 @@
             color: white;
             font-weight: bold;
             font-size: 16px;
-            white-space: nowrap; /* prevents wrapping if screen is narrow */
-            font-family:Arial, Helvetica, sans-serif;
+            white-space: nowrap;
         }
 
-        /* Buttons container aligned to right */
+        /* Buttons container */
         .topbar .buttons {
             display: flex;
             gap: 10px;
-            font-family:Arial, Helvetica, sans-serif;
         }
 
         /* Button styling */
@@ -53,6 +51,49 @@
         .topbar button:hover {
             background-color: #777;
         }
+
+        /* Hamburger menu button - hidden by default */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        /* Dropdown menu for small screens */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #333;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        .dropdown button {
+            width: 100%;
+        }
+
+        /* Responsive behavior */
+        @media screen and (max-width: 600px) {
+            .topbar .buttons {
+                display: none; /* hide normal buttons */
+            }
+
+            .hamburger {
+                display: flex; /* show hamburger */
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,8 +104,28 @@
             <button>Button 2</button>
             <button>Button 3</button>
         </div>
+
         <div class="title">Lask's Fangame Multikit</div>
+
+        <div class="hamburger" onclick="toggleDropdown()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="dropdown" id="dropdownMenu">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+        </div>
     </div>
+
+    <script>
+        function toggleDropdown() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 
 </body>
 </html>
