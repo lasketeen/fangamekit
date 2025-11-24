@@ -147,6 +147,16 @@
             <button class="btn" type="button">Placeholder 2</button>
             <button class="btn" type="button">Placeholder 3</button>
         </div>
+        <script>
+        (function(){
+            const dropdown = document.getElementById('menuDropdown');
+            if (!dropdown) return;
+            // Remove any menu items and hide the dropdown entirely
+            dropdown.innerHTML = '';
+            dropdown.style.display = 'none';
+            dropdown.setAttribute('aria-hidden','true');
+        })();
+        </script>
 
         <!-- Mobile menu button (appears on small screens) -->
         <button class="btn menu-btn" aria-label="Open menu" id="menuToggle" aria-expanded="false" style="background:transparent;border-color:transparent;color:#ffffff">☰</button>
