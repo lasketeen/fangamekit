@@ -100,6 +100,46 @@
     <header class="topbar" role="banner" style="background: rgb(50,50,50); padding:0.15rem 0.75rem; min-height:40px;">
         <div class="left" aria-hidden="true"></div>
 
+        <style>
+        /* Darker, tighter topbar */
+        header.topbar{
+            background:#0b0b0b !important;
+            padding:0.1rem 0.6rem !important;
+            min-height:36px !important;
+            border-bottom-color: rgba(255,255,255,0.03);
+        }
+
+        /* Remove left column content/space */
+        header.topbar .left{display:none}
+
+        /* Compact the right-side action buttons */
+        header.topbar .actions{
+            gap:0.25rem;
+            align-items:center;
+        }
+        header.topbar .actions .btn{
+            padding:0.25rem 0.45rem;
+            font-size:0.85rem;
+            min-width:36px;
+            border-radius:6px;
+            background:transparent;
+            color:#ffffff;
+            border-color: rgba(255,255,255,0.06);
+            box-shadow:none;
+        }
+
+        /* Brand tweaks */
+        .brand{
+            color:#ffffff;
+            font-size:0.95rem;
+            font-weight:600;
+            justify-self:center;
+        }
+
+        /* Ensure mobile menu button remains visible */
+        header.topbar .menu-btn{color:#ffffff; border-color:transparent}
+        </style>
+
         <div class="brand" style="color:#ffffff">Lask's Fangame Multikit</div>
 
         <div class="actions" role="navigation" aria-label="Top actions" style="align-items:center">
