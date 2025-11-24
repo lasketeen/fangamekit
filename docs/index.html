@@ -16,7 +16,7 @@
             align-items: center;
             justify-content: space-between;
             height: 50px;
-            background-color: #23232e;
+            background-color: #333;
             padding: 0 20px;
             position: relative;
         }
@@ -38,21 +38,48 @@
             gap: 10px;
         }
 
-        /* Button styling */
+        /* Shared button style */
         .topbar button {
-            padding: 8px 16px;
-            background-color: #555;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
             border: none;
-            color: white;
             cursor: pointer;
             border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s ease;
+            color: white;
         }
 
+        /* Icon style */
+        .icon {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
+        /* Hover fade */
         .topbar button:hover {
-            background-color: #777;
+            opacity: 0.85;
         }
 
-        /* Hamburger menu button - hidden by default */
+        /* Individual button colors */
+        .btn-home {
+            background-color: #4CAF50;
+        }
+
+        .btn-download {
+            background-color: #2196F3;
+        }
+
+        .btn-docs {
+            background-color: #FF9800;
+        }
+
+        /* Hamburger menu */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -66,7 +93,7 @@
             background-color: white;
         }
 
-        /* Dropdown menu for small screens */
+        /* Dropdown menu */
         .dropdown {
             display: none;
             position: absolute;
@@ -82,45 +109,21 @@
 
         .dropdown button {
             width: 100%;
+            justify-content: left;
         }
 
         /* Responsive behavior */
         @media screen and (max-width: 800px) {
             .topbar .buttons {
-            display: none; /* hide normal buttons */
+                display: none;
             }
 
             .hamburger {
-            display: flex; /* show hamburger */
+                display: flex;
             }
         }
-    </style>
-</head>
-<body>
 
-    <div class="topbar">
-        <div class="buttons">
-            <button>Button 1</button>
-            <button>Button 2</button>
-            <button>Button 3</button>
-        </div>
-
-        <div class="title">Lask's Fangame Multikit</div>
-
-        <div class="hamburger" onclick="toggleDropdown()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <div class="dropdown" id="dropdownMenu">
-            <button>Button 1</button>
-            <button>Button 2</button>
-            <button>Button 3</button>
-        </div>
-    </div>
-
-    <style>
+        /* Hero banner */
         .hero {
             position: relative;
             width: 100%;
@@ -134,19 +137,18 @@
             display: block;
         }
 
-        /* Overlay centered text */
         .hero-text {
             position: absolute;
-            inset: 0; /* fills the hero container */
+            inset: 0;
             display: flex;
-            align-items: center;  /* vertical centering */
-            justify-content: center; /* horizontal centering */
+            align-items: center;
+            justify-content: center;
             text-align: center;
             color: white;
-            font-size: clamp(16px, 4vw, 42px); /* scales responsively */
+            font-size: clamp(16px, 4vw, 42px);
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-            padding: 0 10px; /* avoids clipping on tiny screens */
+            padding: 0 10px;
         }
 
         @media screen and (max-width: 1200px) {
@@ -154,8 +156,50 @@
                 height: 40vh;
             }
         }
-
     </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="buttons">
+            <button class="btn-home">
+                <img src="icons/home.png" alt="" class="icon">
+                Home
+            </button>
+            <button class="btn-download">
+                <img src="icons/download.png" alt="" class="icon">
+                Download
+            </button>
+            <button class="btn-docs">
+                <img src="icons/docs.png" alt="" class="icon">
+                Docs
+            </button>
+        </div>
+
+        <div class="title">Lask's Fangame Multikit</div>
+
+        <div class="hamburger" onclick="toggleDropdown()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="dropdown" id="dropdownMenu">
+            <button class="btn-home">
+                <img src="icons/home.png" alt="" class="icon">
+                Home
+            </button>
+            <button class="btn-download">
+                <img src="icons/download.png" alt="" class="icon">
+                Download
+            </button>
+            <button class="btn-docs">
+                <img src="icons/docs.png" alt="" class="icon">
+                Docs
+            </button>
+        </div>
+    </div>
 
     <div class="hero">
         <img src="images/banner.png" alt="Lask's Fangame Multikit banner" loading="lazy">
