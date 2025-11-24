@@ -79,6 +79,18 @@
             background-color: #141414;
         }
 
+        /* Remove default link styling around buttons */
+        .buttons a {
+            text-decoration: none;
+            outline: none;
+        }
+
+        /* Remove the blue outline highlight when clicked/focused */
+        .buttons a:focus,
+        .buttons a:active {
+            outline: none;
+        }
+
         /* Hamburger menu */
         .hamburger {
             display: none;
@@ -163,19 +175,19 @@
 
     <div class="topbar">
         <div class="buttons">
-            <a href="https://discord.com/" target="_blank">
+            <a href="https://discord.gg/Cu9xkUdUP8" target="_blank">
                 <button class="btn-top1">
                     <img src="icons/discord.png" alt="" class="icon">
                     Discord
                 </button>
             </a>
-            <a href="https://www.youtube.com/" target="_blank">
+            <a href="https://www.youtube.com/@lasketoh" target="_blank">
                 <button class="btn-top2">
                     <img src="icons/youtube.png" alt="" class="icon">
                     YouTube
                 </button>
             </a>
-            <a href="https://www.roblox.com/" target="_blank">
+            <a href="https://www.roblox.com/users/423215337/profile" target="_blank">
                 <button class="btn-top3">
                     <img src="icons/roblox.png" alt="" class="icon">
                     Roblox
