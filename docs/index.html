@@ -38,56 +38,39 @@
             gap: 10px;
         }
 
-        /* Shared button style */
-        .topbar button {
+        /* Icon buttons */
+        .topbar .buttons a {
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            border: none;
+            justify-content: center;
+            border-radius: 6px;
             cursor: pointer;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: opacity 0.2s ease;
-            color: white;
+            text-decoration: none;
+            outline: none;
+            transition: opacity .2s;
+        }
+        .topbar .buttons a:hover {
+            opacity: 0.8;
         }
 
-        /* Icon style */
+        /* Individual button colors */
+        .btn-top1 { background-color: #364cc5; }
+        .btn-top2 { background-color: #f32121; }
+        .btn-top3 { background-color: #141414; }
+
+        /* PNG icons */
         .icon {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             object-fit: contain;
             pointer-events: none;
         }
 
-        /* Hover fade */
-        .topbar button:hover {
-            opacity: 0.85;
-        }
-
-        /* Individual button colors */
-        .btn-top1 {
-            background-color: #364cc5;
-        }
-
-        .btn-top2 {
-            background-color: #f32121;
-        }
-
-        .btn-top3 {
-            background-color: #141414;
-        }
-
-        /* Remove default link styling around buttons */
-        .buttons a {
-            text-decoration: none;
-            outline: none;
-        }
-
-        /* Remove the blue outline highlight when clicked/focused */
-        .buttons a:focus,
-        .buttons a:active {
+        /* Remove the blue highlight */
+        .topbar .buttons a:focus,
+        .topbar .buttons a:active {
             outline: none;
         }
 
@@ -119,17 +102,15 @@
             z-index: 10;
         }
 
-        .dropdown button {
+        .dropdown a {
             width: 100%;
-            justify-content: left;
         }
 
-        /* Responsive behavior */
+        /* Responsive: hide buttons under 800px */
         @media screen and (max-width: 800px) {
             .topbar .buttons {
                 display: none;
             }
-
             .hamburger {
                 display: flex;
             }
@@ -174,60 +155,45 @@
 <body>
 
     <div class="topbar">
+
+        <!-- RIGHT BUTTONS -->
         <div class="buttons">
-            <a href="https://discord.gg/Cu9xkUdUP8" target="_blank">
-                <button class="btn-top1">
-                    <img src="icons/discord.png" alt="" class="icon">
-                    Discord
-                </button>
+            <a class="btn-top1" href="https://discord.gg/Cu9xkUdUP8" target="_blank">
+                <img src="icons/discord.png" alt="" class="icon">
             </a>
-            <a href="https://www.youtube.com/@lasketoh" target="_blank">
-                <button class="btn-top2">
-                    <img src="icons/youtube.png" alt="" class="icon">
-                    YouTube
-                </button>
+            <a class="btn-top2" href="https://www.youtube.com/@lasketoh" target="_blank">
+                <img src="icons/youtube.png" alt="" class="icon">
             </a>
-            <a href="https://www.roblox.com/users/423215337/profile" target="_blank">
-                <button class="btn-top3">
-                    <img src="icons/roblox.png" alt="" class="icon">
-                    Roblox
-                </button>
+            <a class="btn-top3" href="https://www.roblox.com/users/423215337/profile" target="_blank">
+                <img src="icons/roblox.png" alt="" class="icon">
             </a>
         </div>
 
-
+        <!-- CENTER TITLE -->
         <div class="title">Lask's Fangame Multikit</div>
 
+        <!-- MOBILE HAMBURGER -->
         <div class="hamburger" onclick="toggleDropdown()">
             <div></div>
             <div></div>
             <div></div>
         </div>
 
+        <!-- MOBILE DROPDOWN MENU -->
         <div class="dropdown" id="dropdownMenu">
-            <div class="buttons">
-                <a href="https://discord.gg/Cu9xkUdUP8" target="_blank">
-                    <button class="btn-top1">
-                        <img src="icons/discord.png" alt="" class="icon">
-                        Discord
-                    </button>
-                </a>
-                <a href="https://www.youtube.com/@lasketoh" target="_blank">
-                    <button class="btn-top2">
-                        <img src="icons/youtube.png" alt="" class="icon">
-                        YouTube
-                    </button>
-                </a>
-                <a href="https://www.roblox.com/users/423215337/profile" target="_blank">
-                    <button class="btn-top3">
-                        <img src="icons/roblox.png" alt="" class="icon">
-                        Roblox
-                    </button>
-                </a>
-            </div>
+            <a class="btn-top1" href="https://discord.gg/Cu9xkUdUP8" target="_blank">
+                <img src="icons/discord.png" alt="" class="icon">
+            </a>
+            <a class="btn-top2" href="https://www.youtube.com/@lasketoh" target="_blank">
+                <img src="icons/youtube.png" alt="" class="icon">
+            </a>
+            <a class="btn-top3" href="https://www.roblox.com/users/423215337/profile" target="_blank">
+                <img src="icons/roblox.png" alt="" class="icon">
+            </a>
         </div>
     </div>
 
+    <!-- HERO BANNER -->
     <div class="hero">
         <img src="images/banner.png" alt="Lask's Fangame Multikit banner" loading="lazy">
         <div class="hero-text">Lask's Fangame Multikit (v5.5 and v6.1)</div>
