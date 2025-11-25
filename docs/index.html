@@ -233,6 +233,47 @@
 
     <div class="full-width-divider" role="separator" aria-hidden="true"></div>
 
+    <style>
+    .button-row {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+    .action-btn {
+        background: rgba(255,255,255,0.06);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform .15s, background .15s, box-shadow .15s;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    }
+    .action-btn:hover {
+        transform: translateY(-4px);
+        background: rgba(255,255,255,0.12);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+    }
+    .action-btn:active { transform: translateY(-2px); }
+
+    @media (max-width: 520px) {
+        .button-row { flex-direction: column; align-items: center; }
+        .action-btn { width: 100%; max-width: 360px; justify-content: center; }
+    }
+    </style>
+
+    <div class="button-row" role="toolbar" aria-label="Primary actions">
+        <a class="action-btn" href="#" role="button">Download .rbxl</a>
+        <a class="action-btn" href="#" role="button">Download .rbxm</a>
+        <a class="action-btn" href="#" role="button">View Docs</a>
+        <a class="action-btn" href="#" role="button">Get Support</a>
+    </div>
+
     <script>
         function toggleDropdown() {
             const menu = document.getElementById('dropdownMenu');
