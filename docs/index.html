@@ -80,7 +80,6 @@
         .hamburger div { width: 25px; height: 3px; background-color: white; }
 
         .dropdown {
-            display: none;
             position: absolute;
             top: 50px;
             right: 20px;
@@ -91,9 +90,12 @@
             border-radius: 4px;
             z-index: 10;
             transition: all 0.2s ease;
+            display: none;
         }
 
-        .dropdown.open { display: flex; }
+        .dropdown.open { 
+            display: flex; 
+        }
 
         .dropdown a { width: 100%; }
 
@@ -364,6 +366,15 @@
             const menu = document.getElementById('dropdownMenu');
             menu.classList.toggle('open');
         }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('dropdownMenu');
+            const hamburger = document.querySelector('.hamburger');
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('open');
+            }
+        });
     </script>
 
 </body>
