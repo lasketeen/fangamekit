@@ -76,7 +76,6 @@
             gap: 4px;
             cursor: pointer;
         }
-
         .hamburger div { width: 25px; height: 3px; background-color: white; }
 
         .dropdown {
@@ -89,33 +88,27 @@
             background-color: #333;
             border-radius: 4px;
             z-index: 10;
-            transition: all 0.2s ease;
             display: none;
         }
 
-        .dropdown.open { 
-            display: flex; 
-        }
-
-        .dropdown a { width: 100%; }
+        .dropdown.open { display: flex; }
 
         @media screen and (max-width: 800px) {
             .topbar .buttons { display: none; }
             .hamburger { display: flex; }
         }
 
-        /* Hero banner */
+        /* Hero */
         .hero {
-            position: relative;
             width: 100%;
             height: 40vh;
+            position: relative;
         }
 
         .hero img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
         .hero-text {
@@ -129,10 +122,9 @@
             font-size: clamp(16px, 4vw, 42px);
             font-weight: bold;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            padding: 0 10px;
         }
 
-        /* Boxes container */
+        /* Boxes */
         .boxes-container {
             display: flex;
             justify-content: center;
@@ -147,226 +139,184 @@
             width: 300px;
             height: 300px;
             display: flex;
-            flex-direction: column; /* stack content vertically */
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            flex-direction: column;
+            justify-content: space-between;
             text-align: center;
+            border-radius: 8px;
             padding: 15px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .box p {
-            margin: 5px 0; /* spacing between lines */
+        .box p { margin: 5px 0; }
+
+        .download-btn {
+            background-color: #364cc5;
+            color: white;
+            padding: 12px 0;
+            width: 100%;
+            max-width: 90%;
+            align-self: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: opacity .2s, transform .15s;
         }
 
-        .box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        .download-btn:hover {
+            opacity: 0.8;
+            transform: translateY(-3px);
+        }
+
+        .full-width-divider {
+            width: 100%;
+            height: 1px;
+            margin: 24px 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, .1));
+            box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset;
+        }
+
+        .lineup {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .lineup p {
+            color: white;
+            font-weight: bold;
+            max-width: 480px;
+            text-align: center;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.12);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.45);
         }
     </style>
 </head>
+
 <body>
 
     <div class="topbar">
         <div class="buttons">
             <a class="btn-top1" href="https://discord.gg/Cu9xkUdUP8" target="_blank">
-                <img src="icons/discord.png" alt="" class="icon">
+                <img src="icons/discord.png" class="icon">
             </a>
             <a class="btn-top2" href="https://www.youtube.com/@lasketoh" target="_blank">
-                <img src="icons/youtube.png" alt="" class="icon">
+                <img src="icons/youtube.png" class="icon">
             </a>
             <a class="btn-top3" href="https://www.roblox.com/users/423215337/profile" target="_blank">
-                <img src="icons/roblox.png" alt="" class="icon">
+                <img src="icons/roblox.png" class="icon">
             </a>
         </div>
 
         <div class="title">Lask's Fangame Multikit</div>
 
         <div class="hamburger" onclick="toggleDropdown()">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div></div><div></div><div></div>
         </div>
 
         <div class="dropdown" id="dropdownMenu">
             <a class="btn-top1" href="https://discord.gg/Cu9xkUdUP8" target="_blank">
-                <img src="icons/discord.png" alt="" class="icon">
+                <img src="icons/discord.png" class="icon">
             </a>
             <a class="btn-top2" href="https://www.youtube.com/@lasketoh" target="_blank">
-                <img src="icons/youtube.png" alt="" class="icon">
+                <img src="icons/youtube.png" class="icon">
             </a>
             <a class="btn-top3" href="https://www.roblox.com/users/423215337/profile" target="_blank">
-                <img src="icons/roblox.png" alt="" class="icon">
+                <img src="icons/roblox.png" class="icon">
             </a>
         </div>
     </div>
 
-    <!-- HERO BANNER -->
     <div class="hero">
-        <img src="images/banner2.png" alt="Lask's Fangame Multikit banner" loading="lazy">
+        <img src="images/banner2.png">
         <div class="hero-text">Download LFMK</div>
     </div>
 
-    <div class="button-row" role="toolbar" aria-label="Primary actions">
-        <a class="action-btn" href="https://lasketeen.github.io/fangamekit/" role="button">Home</a>
-        <a class="action-btn" href="documentation.html" role="button">Documentation</a>
-        <a class="action-btn" href="download.html" role="button">Kit Download</a>
-        <a class="action-btn" href="logs.html/" role="button">Update Logs</a>
-        <a class="action-btn" href="credits.html/" role="button">Credits</a>
+    <div class="button-row">
+        <a class="action-btn" href="https://lasketeen.github.io/fangamekit/">Home</a>
+        <a class="action-btn" href="documentation.html">Documentation</a>
+        <a class="action-btn" href="download.html">Kit Download</a>
+        <a class="action-btn" href="logs.html">Update Logs</a>
+        <a class="action-btn" href="credits.html">Credits</a>
     </div>
 
-    <div class="full-width-divider" role="separator" aria-hidden="true"></div>
+    <div class="full-width-divider"></div>
 
-    <style>
-    .full-width-divider {
-        width: 100%;
-        height: 1px;
-        margin: 24px 0;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, .1));
-        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
-        pointer-events: none;
-    }
-    </style>
-
-    <!-- BOXES UNDER HERO -->
     <div class="boxes-container">
         <div class="box">
-            <p><b>View Kit Documentation</b></p>
-            <p>Click below to review the Kit documents.</p>
+            <div>
+                <p><b>Download LFMK (.rbxl)</b></p>
+                <p>The .rbxl file provides the full game file with everything set up.</p>
+            </div>
+            <a class="download-btn" href="#" download>Download .rbxl</a>
         </div>
+
         <div class="box">
-            <p><b>Download Fangame Kit</b></p>
-            <p>Click below to download Lask's Fangame Multikit</p>
+            <div>
+                <p><b>Download LFMK (.rbxm)</b></p>
+                <p>The .rbxm file gives you a folder version you can drag into Studio.</p>
+            </div>
+            <a class="download-btn" href="#" download>Download .rbxm</a>
         </div>
     </div>
 
-    <style>
-    .lineup {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 24px;
-        padding: 20px;
-        flex-wrap: nowrap; /* keep items side-by-side on wider screens */
-    }
-
-    .lineup p {
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        margin: 0;
-        flex: 1 1 280px;    /* allow each paragraph to grow/shrink but not below 280px */
-        max-width: 480px;
-        text-align: center;
-    }
-
-    /* Stack vertically only on smaller viewports */
-    @media (max-width: 900px) {
-        .lineup {
-            flex-direction: column;
-            gap: 12px;
-            align-items: stretch;
-        }
-        .lineup p { text-align: center; }
-    }
-    </style>
+    <div class="full-width-divider"></div>
 
     <div class="lineup">
-        <p>
-            <b>How do I download LFMK?</b>
-            <br>Choose to download either the <b>.rbxl or .rbxm</b> file from the download buttons above. If you are using .rbxl, open 
-            up the file. If you are using .rbxm, take the file and drag it into your studio workspace to insert the kit.
-        </p>
-
-        <p>
-            <b>How do I use the kit?</b>
-            <br>The kit is filled to the brim with disabled "READ ME" scripts containing instructions on how to use different features
-             of the kit. <b>PLEASE start by reading "KIT INSTRUCTIONS"</b> as it contains the most vital information to even get the kit working 
-             in the first place.
-        </p>
-        
-        <p>
-            <b>Is there anything else I should know?</b>
-            <br>Make sure you <b>visit the "SETTINGS" folder</b> in workspace as it is essentially the powerhouse of the entire kit. There are various 
-            settings and features you can add to further add customability to the fangame kit. Any other questions should be asked in the discord
-             server linked above.
-        </p>
+        <p><b>How do I download LFMK?</b><br>Choose .rbxl or .rbxm above and load it into Studio.</p>
+        <p><b>How do I use the kit?</b><br>Read the provided “READ ME” scripts inside the kit.</p>
+        <p><b>Anything else?</b><br>Visit the SETTINGS folder — it's the core of the kit.</p>
     </div>
 
-    <style>
-    .button-row {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        padding: 20px;
-        flex-wrap: wrap;
-    }
-    .action-btn {
-        background: rgba(255,255,255,0.06);
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition: transform .15s, background .15s, box-shadow .15s;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-    }
-    .action-btn:hover {
-        transform: translateY(-4px);
-        background: rgba(255,255,255,0.12);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.45);
-    }
-    .action-btn:active { transform: translateY(-2px); }
-
-    @media (max-width: 520px) {
-        .button-row { flex-direction: column; align-items: center; }
-        .action-btn { width: 100%; max-width: 360px; justify-content: center; }
-    }
-    </style>
-
-    <div class="full-width-divider" role="separator" aria-hidden="true"></div>
+    <div class="full-width-divider"></div>
 
     <div class="lineup">
+        <p><b>This kit is made by:</b><br>lasketeen (@Azamask)<br>native315 (@NativeAmerican315)</p>
+
         <p>
-            <b>This kit is make by yours truly:</b>
-            <br>lasketeen (@Azamask)
-            <br>native315 (@NativeAmerican315)
+            <b>Join the Discord!</b><br>
+            <a href="https://discord.gg/Cu9xkUdUP8" style="color:#66ccff;">Click here</a>
         </p>
 
         <p>
-            <b>Join the discord server!</b>
-            <br>Report bugs and issues with the kit. Along with suggestions and feedback to help improve the kit.
-            <br><a href="https://discord.gg/Cu9xkUdUP8" target="_blank" style="color: #66ccff; text-decoration: underline;">Click here</a>
-        </p>
-        
-        <p>
-            <b>Follow me on roblox!</b>
-            <br>Support me by following me on roblox along with checking out my other fangames and creations! (I MADE LTOD NO WAY!!!!!)
-            <br><a href="https://www.roblox.com/users/423215337/profile" target="_blank" style="color: #66ccff; text-decoration: underline;">Click here</a>
+            <b>Follow me on Roblox!</b><br>
+            <a href="https://www.roblox.com/users/423215337/profile" style="color:#66ccff;">Click here</a>
         </p>
     </div>
 
     <script>
         function toggleDropdown() {
-            const menu = document.getElementById('dropdownMenu');
-            menu.classList.toggle('open');
+            document.getElementById('dropdownMenu').classList.toggle('open');
         }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', e => {
             const menu = document.getElementById('dropdownMenu');
-            const hamburger = document.querySelector('.hamburger');
-            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-                menu.classList.remove('open');
-            }
+            const burger = document.querySelector('.hamburger');
+            if (!menu.contains(e.target) && !burger.contains(e.target)) menu.classList.remove('open');
         });
     </script>
 
