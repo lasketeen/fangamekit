@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lask's Fangame Multikit</title>
     <link rel="icon" type="image/png" href="icons/lasketeen.png">
-    
     <style>
         body {
             margin: 0;
@@ -255,7 +254,7 @@
 
     <div class="hero">
         <img src="images/banner2.png">
-        <div class="hero-text">LFMK Update Log</div>
+        <div class="hero-text">Lask's Fangame Multikit</div>
     </div>
 
     <div class="button-row">
@@ -266,62 +265,7 @@
         <a class="action-btn" href="credits.html">Credits</a>
     </div>
 
-    <div class="full-width-divider" role="separator" aria-hidden="true"></div>
-
-    <style>
-    .full-width-divider {
-        width: 100%;
-        height: 1px;
-        margin: 24px 0;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, .1));
-        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
-        pointer-events: none;
-    }
-    </style>
-
-    <!-- BOXES UNDER HERO -->
-    <div class="boxes-container">
-        <div class="box">
-            <p><b>View Kit Documentation</b></p>
-            <p>Click below to review the Kit documents.</p>
-        </div>
-        <div class="box">
-            <p><b>Download Fangame Kit</b></p>
-            <p>Click below to download Lask's Fangame Multikit</p>
-        </div>
-    </div>
-
-    <style>
-    .lineup {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 24px;
-        padding: 20px;
-        flex-wrap: nowrap; /* keep items side-by-side on wider screens */
-    }
-
-    .lineup p {
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        margin: 0;
-        flex: 1 1 280px;    /* allow each paragraph to grow/shrink but not below 280px */
-        max-width: 480px;
-        text-align: center;
-    }
-
-    /* Stack vertically only on smaller viewports */
-    @media (max-width: 900px) {
-        .lineup {
-            flex-direction: column;
-            gap: 12px;
-            align-items: stretch;
-        }
-        .lineup p { text-align: center; }
-    }
-    </style>
+    <div class="full-width-divider"></div>
 
     <div class="lineup">
         <p>
@@ -331,13 +275,14 @@
             building blocks to begin with.
         </p>
 
+
         <p>
             <b>What are key qualities and features the kit has?</b>
             <br>The kit comes with much better optimizations, instructions for nearly everything, fangame settings for countless
             features, all-jump and practice gamemodes, <b>supports both kit v6.1 and v5.5</b> in the same kit, and so much more!
              (and there will be more features to come in the future!)
         </p>
-        
+       
         <p>
             <b>Whats the charge to purchase the kit?</b>
             <br>This kit is <b>COMPLETELY FREE</b> and will forever remain free of charge. Feel free to download and use the kit to
@@ -346,47 +291,13 @@
         </p>
     </div>
 
-    <style>
-    .button-row {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        padding: 20px;
-        flex-wrap: wrap;
-    }
-    .action-btn {
-        background: rgba(255,255,255,0.06);
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition: transform .15s, background .15s, box-shadow .15s;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-    }
-    .action-btn:hover {
-        transform: translateY(-4px);
-        background: rgba(255,255,255,0.12);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.45);
-    }
-    .action-btn:active { transform: translateY(-2px); }
-
-    @media (max-width: 520px) {
-        .button-row { flex-direction: column; align-items: center; }
-        .action-btn { width: 100%; max-width: 360px; justify-content: center; }
-    }
-    </style>
-
     <div class="full-width-divider" role="separator" aria-hidden="true"></div>
 
     <div style="display: flex; justify-content: center; padding: 40px 20px;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/jh_AOOLkGbg?si=UM6TCwNnxVDTWr0g" title="Kit Promotional" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
-    <div class="full-width-divider" role="separator" aria-hidden="true"></div>
+    <div class="full-width-divider"></div>
 
     <div class="lineup">
         <p><b>This kit is made by:</b><br>lasketeen (@Azamask)<br>native315 (@NativeAmerican315)</p>
@@ -404,17 +315,12 @@
 
     <script>
         function toggleDropdown() {
-            const menu = document.getElementById('dropdownMenu');
-            menu.classList.toggle('open');
+            document.getElementById('dropdownMenu').classList.toggle('open');
         }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', e => {
             const menu = document.getElementById('dropdownMenu');
-            const hamburger = document.querySelector('.hamburger');
-            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-                menu.classList.remove('open');
-            }
+            const burger = document.querySelector('.hamburger');
+            if (!menu.contains(e.target) && !burger.contains(e.target)) menu.classList.remove('open');
         });
     </script>
 
